@@ -11,7 +11,6 @@ function App() {
         </p>
         <h1> Hello from AWS Amplify</h1>
           Learn React
-        </a>
       </header>
     </div>
   );
