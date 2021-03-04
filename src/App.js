@@ -1,17 +1,19 @@
-import './App.css';
+import React, {Component} from 'react';
+import List from './Components/List';
+import Title from './Components/Title';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h1> Hello from AWS Amplify</h1>
-          Learn React
-      </header>
-    </div>
-  );
+const studentList1 = ["Stephen", "John", "Paul"];
+const studentList2 = ["Mark", "Jackie", "Susan"];
+
+class App extends Component {
+  render () {
+    return (
+      <div>
+        <Title title= {'Students List:'}/>
+        <List students= {studentList1}/>
+        <List students= {studentList2}/>
+      </div>)
+  }
 }
 
 export default App;
