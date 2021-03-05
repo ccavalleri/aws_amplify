@@ -1,18 +1,34 @@
-import React, {Component} from 'react';
-import List from './Components/List';
-import Title from './Components/Title';
-
-const studentList1 = ["Stephen", "John", "Paul"];
-const studentList2 = ["Mark", "Jackie", "Susan"];
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Navbar from './Components/NavBar';
+import Footer from './Components/Footer';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Blog from './Pages/Blog';
+import Services from './Pages/Services';
+import Contact from './Pages/Contact';
 
 class App extends Component {
-  render () {
+  constructor() {
+    super();
+    console.log('constructor');
+  }
+
+  render() {
+    console.log('rendering..');
     return (
-      <div>
-        <Title title= {'Students List:'}/>
-        <List students= {studentList1}/>
-        <List students= {studentList2}/>
-      </div>)
+      <Router>
+        <div>
+          <Navbar />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/About" component={About} />
+          <Route exact path="/Services" component={Services} />
+          <Route exact path="/Blog" component={Blog} />
+          <Route exact path="/Contact" component={Contact} />
+          <Footer />
+        </div>
+      </Router>
+    );
   }
 }
 
